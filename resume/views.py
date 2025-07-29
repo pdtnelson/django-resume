@@ -6,7 +6,7 @@ def index(request):
     return render(request, 'resume/profile_view.html')
 
 def resume_view(request):
-    resume_model = get_object_or_404(Resume, pk=2)
+    resume_model = get_object_or_404(Resume, pk=1)
     with resume_model.filename.open() as f:
         resume_data = json.loads(f.read())
     context = {'resume': resume_data}
