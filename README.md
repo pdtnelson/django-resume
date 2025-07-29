@@ -4,6 +4,7 @@ This repo is an example of using Django with https://jsonresume.org/ in order to
 ## Running locally
 - Clone the repository
 - ```cd django-resume```
+- Use the .env.example file to setup an .env file
 - ```python manage.py migrate```
 - ```python manage.py makesuperuser```
 - Follow the instructions to setup an admin user
