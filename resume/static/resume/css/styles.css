@@ -1,0 +1,128 @@
+.hero-background {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%); /* Deep blue to slightly lighter blue */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); /* Creates a diagonal cut at the bottom */
+
+  @media (max-width: 768px) {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  }
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  max-width: 900px; /* Limit timeline width */
+  margin: 0 auto; /* Center the timeline */
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%; /* Center the line */
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #cbd5e1; /* Gray-300 for the line */
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem; /* rounded-lg */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  flex-grow: 1; /* Allow card to take available width */
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer; /* Indicate clickability for toggle */
+  border-left: 4px solid #3b82f6; /* Left border accent */
+}
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.2);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-end; /* Default to right side */
+  padding-right: 3rem; /* Space for the circle */
+  align-items: center; /* Vertically align items */
+}
+.timeline-item:nth-child(even) {
+  justify-content: flex-start; /* Alternate to left side */
+  padding-left: 3rem; /* Space for the circle */
+  padding-right: 0;
+}
+.timeline-item:nth-child(even) .timeline-card {
+  border-right: 4px solid #3b82f6; /* Right border accent for alternate side */
+  border-left: none;
+}
+.toggle-button {
+  background-color: #64748b; /* Gray-600 */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle-button:hover {
+  background-color: #475569; /* Gray-700 */
+}
+.toggle-button svg {
+  margin-left: 0.5rem;
+}
+
+.job-responsibilities {
+  overflow: hidden;
+  transition: max-height 0.5s ease-out; /* Smooth transition */
+  padding-top: 0.5rem; /* Space above list when expanded */
+}
+.job-responsibilities.expanded {
+  max-height: 500px; /* Adjust as needed, sufficiently large to show content */
+}
+.job-responsibilities ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+}
+.job-responsibilities li {
+  margin-bottom: 0.25rem;
+}
+/* Responsive adjustments for timeline on small screens */
+@media (max-width: 768px) {
+  .timeline-item {
+    justify-content: flex-start; /* All items on the right side on mobile */
+    padding-left: 3rem; /* Consistent padding */
+    padding-right: 0;
+  }
+  .timeline-item::before {
+    left: calc(1rem - 8px);
+    right: auto;
+  }
+  .timeline-card {
+    width: 100%;
+  }
+}
+
+.job-responsibilities {
+  max-height: 0; /* Initially hidden */
+  overflow: hidden;
+  transition: max-height 0.5s ease-out; /* Smooth transition */
+  padding-top: 0.5rem; /* Space above list when expanded */
+}
+.job-responsibilities.expanded {
+  max-height: 500px; /* Adjust as needed, sufficiently large to show content */
+}
+.job-responsibilities ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+}
+.job-responsibilities li {
+  margin-bottom: 0.25rem;
+}
