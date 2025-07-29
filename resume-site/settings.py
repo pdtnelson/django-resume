@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'resume.urls'
+ROOT_URLCONF = 'resume-site.urls'
 
 TEMPLATES = [
     {
@@ -66,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'resume.wsgi.application'
+WSGI_APPLICATION = 'resume-site.wsgi.application'
 
 
 # Database
