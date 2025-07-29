@@ -20,6 +20,6 @@ from resume import views as resume_views
 
 urlpatterns = [
     path("", resume_views.index, name="index"),
-    path("resume/", include("resume.urls")),
+    path("resume/", resume_views.resume_view, name="resume_view"),
     path('admin/', admin.site.urls),
 ]
