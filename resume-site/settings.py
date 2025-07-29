@@ -72,12 +72,12 @@ WSGI_APPLICATION = 'resume-site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('MYSQL_DATABASE'),
-        'USER': env('MYSQL_USER'),
-        'PASSWORD': env('MYSQL_PASSWORD'),
-        'HOST': env('MYSQL_HOST', default='localhost'),
-        'PORT': env('MYSQL_PORT', default='3306'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST', default='localhost'),
+        'PORT': env('POSTGRES_PORT', default='5432'),
     }
 }
 
