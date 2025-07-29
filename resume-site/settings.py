@@ -1,5 +1,5 @@
-
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
 import os
 import environ
 
@@ -11,6 +11,7 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 
 # Quick-start development settings - unsuitable for production
@@ -22,7 +23,7 @@ SECRET_KEY = 'django-insecure-!7atq29&pshrz4hgo6a0)#(*o21skzr5_on@dwc_2(b_(#b&zn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
