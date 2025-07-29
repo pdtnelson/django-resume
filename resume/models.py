@@ -7,7 +7,7 @@ class Resume(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return str({"name": self.name, "target_job": self.target_job, "filename": self.filename.name})
 
 class Profile(models.Model):
     resume = models.ForeignKey(Resume, on_delete=models.CASCADE)
@@ -16,4 +16,4 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.title} - {self.resume.name}"
+        return str({"title": self.title, "content": self.content[:50], "created_at": self.created_at})
