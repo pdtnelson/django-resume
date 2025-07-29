@@ -1,0 +1,8 @@
+.hero-background {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%); /* Deep blue to slightly lighter blue */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); /* Creates a diagonal cut at the bottom */
+
+  @media (max-width: 768px) {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  }
+}
